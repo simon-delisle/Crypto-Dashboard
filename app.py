@@ -26,10 +26,15 @@ from plotly.subplots import make_subplots
 
 # utilities
 from datetime import datetime
+import configparser as cp
 
 # get the data
 assets = ['BTC', 'ETH']
 timeframes = ['day', 'hour']
+
+# Get api key
+API_key = '8zv2c5w97qfc3sixzmiylq'
+
 
 # Assets timeseries
 bad_request_count = 0
@@ -37,8 +42,8 @@ df_list_hour = {}
 df_list_day = {}
 for asset in assets:
     asset = asset.replace(" ", "")
-    url_hour = 'https://api.lunarcrush.com/v2?data=assets&key=' + API_key + '&symbol=' + asset + '&data_points=2000&interval=hour'
-    url_day = 'https://api.lunarcrush.com/v2?data=assets&key=' + API_key + '&symbol=' + asset + '&data_points=2000&interval=day'
+    url_hour = 'https://api.lunarcrush.com/v2?data=assets&key=' + str(API_key) + '&symbol=' + asset + '&data_points=2000&interval=hour'
+    url_day = 'https://api.lunarcrush.com/v2?data=assets&key=' + str(API_key) + '&symbol=' + asset + '&data_points=2000&interval=day'
     while True: # to correct <HTTPError: HTTP Error 504: Gateway Timeout> --- source: https://stackoverflow.com/questions/15786421/http-error-504-gateway-time-out-when-trying-to-read-a-reddit-comments-post 
         try:
             response_hour = urllib.request.urlopen(url_hour)
