@@ -8,7 +8,7 @@ import pandas as pd
 import os
 from tqdm import tqdm
 import plotly.graph_objects as go
-API_key = '8zv2c5w97qfc3sixzmiylq' # lunarcrush api key
+
 # Manipulate data
 import pandas as pd
 import sqlite3
