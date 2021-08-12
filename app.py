@@ -68,7 +68,7 @@ for asset in assets:
             
 
             
-app = dash.Dash(__name__, external_stylesheets='https://github.com/simon-delisle/Crypto-Dashboard/blob/main/stylesheet.css')
+app = dash.Dash(__name__, external_stylesheets=['https://github.com/simon-delisle/Crypto-Dashboard/blob/main/stylesheet.css'])
 app.layout = html.Div([
     html.H1("Cryptocurrencies Social Data Vizualization"),
     html.Label([
