@@ -72,7 +72,11 @@ app = dash.Dash(__name__, external_stylesheets=["https://raw.githubusercontent.c
 #app.scripts.config.serve_locally = False
 #app.css.append_css({"external_url":"https://raw.githubusercontent.com/simon-delisle/Crypto-Dashboard/main/stylesheet.css"})
 app.layout = html.Div([
-    html.H1("Cryptocurrencies Social Data Vizualization"),
+    html.H1(
+        "Cryptocurrencies Social Data Vizualization", 
+        style={
+            'color': 'hotpink'    
+        }),
     html.Label([
         "Symbol",
         dcc.Dropdown(
