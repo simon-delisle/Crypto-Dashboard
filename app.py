@@ -67,8 +67,9 @@ for asset in assets:
 
             
 
-            
-app = dash.Dash(__name__, external_stylesheets=['https://raw.githubusercontent.com/simon-delisle/Crypto-Dashboard/main/stylesheet.css'])
+        
+app = dash.Dash(__name__)
+app.css.append_css({"external_url":"https://raw.githubusercontent.com/simon-delisle/Crypto-Dashboard/main/stylesheet.css"})
 app.layout = html.Div([
     html.H1("Cryptocurrencies Social Data Vizualization"),
     html.Label([
@@ -103,7 +104,7 @@ app.layout = html.Div([
             children=dcc.Graph(id='twitter_graph')
     )
     
-])
+], className='app')
 
 # Define callback to update graph
 @app.callback(
@@ -240,5 +241,5 @@ def update_figure(symbol, timeframe):
     
     return fig_reddit, fig_tweet
 
-app.run_server(dev_tools_ui=True, debug=True,
-              dev_tools_hot_reload =True, threaded=True)
+if __name__ == "__main__":
+    app.run_server(debug=True)
