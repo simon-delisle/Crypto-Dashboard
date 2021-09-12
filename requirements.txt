@@ -1,10 +1,7 @@
-urllib
-json
 pandas
-os
 plotly
-sqlite3
 dash
-plotly.express
 datetime
-ConfigParser
+dash_bootstrap_components
+dash_core_components
+dash_html_components
